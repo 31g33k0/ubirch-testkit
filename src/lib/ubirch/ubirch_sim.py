@@ -583,7 +583,7 @@ class SimProtocol:
         :return: the signed message or throws an exceptions if failed
         """
         if hash_before_sign:
-            if self.DEBUG: print(">> data will be hashed by SIM before singing")
+            if self.DEBUG: print(">> data will be hashed by SIM before signing")
             protocol_version |= 0x40  # set flag for automatic hashing
         args = _encode_tag([(0xC4, ('_' + entry_id).encode()), (0xD0, bytes([0x21]))])
         self.modem.prepare_AT_session()
